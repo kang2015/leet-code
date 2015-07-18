@@ -7,6 +7,25 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+ 
+ //O(n)
+class Solution {
+public:
+    int countNodes(TreeNode* root) {
+        if(root == NULL){
+            return 0;
+        }
+        if(root->left == NULL && root->right == NULL){
+            return 1;
+        }
+        if(root->right == NULL){
+            return 2;
+        }
+        return countNodes(root->left)+countNodes(root->right)+1;
+    }
+};
+
+//O(log(n))
 class Solution {
 private:
     int getlen(TreeNode *root){
