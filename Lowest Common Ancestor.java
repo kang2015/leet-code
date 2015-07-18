@@ -21,6 +21,12 @@ public class Solution {
 }
 
 //o(n) for unordered binary tree
+import apple.laf.JRSUIUtils;
+
+/**
+ * Created by kangyanli on 15/7/18.
+ */
+
 public class Solution {
     private TreeNode ans = null;
     private boolean dfs(TreeNode root, TreeNode p, TreeNode q){
@@ -37,10 +43,31 @@ public class Solution {
             ans = root;
         }
         return iscur||isleft||isright;
-        
+
     }
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         dfs(root,p,q);
         return ans;
     }
+    public static void main(String[] args){
+        TreeNode root = new TreeNode(3);
+        TreeNode l = new TreeNode(2);
+        TreeNode r = new TreeNode(3);
+        root.left = l;
+        root.right =r;
+        Solution s = new Solution();
+        TreeNode ans = s.lowestCommonAncestor(root,l,r);
+        System.out.println(ans.val);
+    }
 }
+
+/**
+ * Created by kangyanli on 15/7/19.
+ */
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode(int x) { val = x; }
+}
+
