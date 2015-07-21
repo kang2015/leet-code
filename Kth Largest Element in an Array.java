@@ -4,9 +4,9 @@ public class Solution {
         for(int e:nums){
             largeK.add(e);
             if(largeK.size()>k){
-                largeK.poll();
+                largeK.poll(); //remove the least of k+1
             }
         }
-        return largeK.poll();
+        return largeK.poll(); // return the least of k
     }
 }
