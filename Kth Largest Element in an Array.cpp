@@ -1,4 +1,4 @@
-class Solution {
+class Solution {//quick sort idea, o(log(n))
 private:
     int partition(vector<int> &nums,int l,int r){
         int pivot = nums[l];
