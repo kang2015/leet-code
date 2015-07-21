@@ -1,5 +1,5 @@
 public class Solution {
-    public int findKthLargest(int[] nums, int k) {// o(n*log(k))
+    public int findKthLargest(int[] nums, int k) {// o(n*log(k+1))
         PriorityQueue<Integer> largeK = new PriorityQueue<Integer>(k+1);// min heap
         for(int e:nums){
             largeK.add(e);
