@@ -1,6 +1,6 @@
 public class Solution {
     public List<String> wordBreak(String s, Set<String> wordDict) {
-        List<Integer> hist = new ArrayList<Integer>();//for any h in hist, s[0 ~ h-1] is a possible solution
+        Set<Integer> hist = new HashSet<Integer>();//for any h in hist, s[0 ~ h-1] is a possible solution
         List<List<Integer>> backt = new ArrayList<List<Integer>>();//backt[i] record possible source of pos i;
         for(int i=0;i<s.length();i++){
             backt.add(new ArrayList<Integer>());
@@ -11,7 +11,7 @@ public class Solution {
             flag = false;
             for(int begin:hist){
                 if(wordDict.contains(s.substring(begin,i+1))){
-                    flag = true;
+                    flag = true;//if use hist.add(i+1) here, triger "ConcurrentModificationException"
                     backt.get(i).add(begin);
                 }
             }
