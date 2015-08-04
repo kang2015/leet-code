@@ -26,7 +26,7 @@ public class Solution {
     }
     private void dfs(List<String> ans, String tmp, String s,List<List<Integer>> backt, int pos){
         if(pos == -1){
-            ans.add(new String(tmp.substring(0,tmp.length()-1)));
+            ans.add(new String(tmp.substring(0,tmp.length()-1)));//last one char of tmp is ' ',reomove it
             return;
         }
         for(int i=0;i<backt.get(pos).size();i++){
