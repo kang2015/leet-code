@@ -5,7 +5,7 @@ public class Solution {
         int iLowerNum = 0;
         int iCurrNum = 0;
         int iHigherNum = 0;
-        while(n/iFactor>=10){// "10" not "0" to prevent overflow
+        while(n/iFactor>=10){// "10" not "1" to prevent overflow
             iLowerNum = n - (n/iFactor)*iFactor;
             iCurrNum = n/iFactor%10;
             iHigherNum = n/(iFactor*10);
