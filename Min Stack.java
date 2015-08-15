@@ -33,7 +33,7 @@ public:
     }
 };
 
-//two stack java
+//two stack, one for data, one for current min
 class MinStack {
     private Stack<Integer> data = new Stack<Integer>();
     private Stack<Integer> minr = new Stack<Integer>();
@@ -59,3 +59,31 @@ class MinStack {
         return minr.peek();
     }
 }
+
+
+//minor space optimization
+class MinStack {
+    private Stack<Integer> data = new Stack<Integer>();
+    private Stack<Integer> minr = new Stack<Integer>();
+    public void push(int x) {
+        data.push(x);
+        if(minr.empty()||x<=minr.peek()){
+            minr.push(x);
+        }
+    }
+
+    public void pop() {
+        int cur = data.pop();
+        if(cur == minr.peek())
+            minr.pop();
+    }
+
+    public int top() {
+        return data.peek();
+    }
+
+    public int getMin() {
+        return minr.peek();
+    }
+}
+
