@@ -1,3 +1,4 @@
+// one stack
 class MinStack {
 public:
     long min;
@@ -31,3 +32,30 @@ public:
         return (int)min;
     }
 };
+
+//two stack java
+class MinStack {
+    private Stack<Integer> data = new Stack<Integer>();
+    private Stack<Integer> minr = new Stack<Integer>();
+    public void push(int x) {
+        data.push(x);
+        if(minr.empty()||x<minr.peek()){
+            minr.push(x);
+        }else{
+            minr.push(minr.peek());
+        }
+    }
+
+    public void pop() {
+        data.pop();
+        minr.pop();
+    }
+
+    public int top() {
+        return data.peek();
+    }
+
+    public int getMin() {
+        return minr.peek();
+    }
+}
