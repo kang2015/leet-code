@@ -29,7 +29,7 @@ public:
                 }
                 ops.pop();
                 i++;
-            }else if(s[i] == '+' || s[i] == '-' || ){
+            }else if(s[i] == '+' || s[i] == '-' ){
                 while(!ops.empty() && ops.top() != '('){
                     calhelper();
                 }
