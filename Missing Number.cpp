@@ -7,17 +7,10 @@ public:
                 left++;
             }else if(nums[left] > right){
                 swap(nums[left],nums[right]);
-                right--;left++;
+                right--;
                 //nums[left] = -1;
-            }else if(nums[left] == -1){
-                left++;
             }else{
                 swap(nums[left],nums[nums[left]]);
-            }
-        }
-        for(int i=0;i<=right;i++){
-            if(nums[i] != i){
-                return i;
             }
         }
         return right+1;
