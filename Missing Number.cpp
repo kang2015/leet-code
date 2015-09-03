@@ -9,8 +9,10 @@ public:
                 swap(nums[left],nums[right]);
                 right--;
                 //nums[left] = -1;
-            }else{
+            }else if(nums[left] != nums[nums[left]]){
                 swap(nums[left],nums[nums[left]]);
+            }else{
+                left++;
             }
         }
         return right+1;
