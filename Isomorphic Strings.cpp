@@ -23,3 +23,27 @@ public:
         return true;
     }
 };
+
+class Solution {
+public:
+    bool isIsomorphic(string s, string t) {
+        if(s.length()!=t.length()){
+            return false;
+        }
+        char hashst[256] = {'\0'};
+        char hashts[256] = {'\0'};
+        for(int i=0;i<s.length();i++){
+            if((hashst[s[i]] != '\0' && hashst[s[i]] != t[i])||(hashts[t[i]] != '\0' && hashts[t[i]] != s[i])){
+                return false;
+            }else{
+                if(hashst[s[i]] == '\0'){
+                    hashst[s[i]] = t[i];
+                }
+                if(hashts[t[i]] == '\0'){
+                    hashts[t[i]] = s[i];
+                }
+            }
+        }
+        return true;
+    }
+};
