@@ -41,10 +41,12 @@ public class Solution {
     }
     
     int find(int pos){
-        while(pre[pos] != pos){
-            pos = pre[pos];
+        int root = pos;
+        while(pre[root] != root){
+            root = pre[root];
         }
-        return pos;
+        pre[pos] = root;
+        return root;
     }
     
     void merge(int pos1,int pos2){
